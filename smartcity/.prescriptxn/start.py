@@ -1,5 +1,6 @@
 from flask import Flask, render_template, Blueprint, request, flash, redirect, url_for
 import pymysql
+import requests
 from module import dbModule
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
@@ -55,6 +56,7 @@ def register():
 def medlist():
     name = request.args.get('name')
     return render_template("medlist.html", name=name)
+
 
 def main():
     app.run(host='127.0.0.1', debug=True, port=8000)
