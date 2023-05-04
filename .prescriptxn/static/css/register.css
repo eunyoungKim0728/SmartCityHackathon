@@ -1,0 +1,67 @@
+
+#main{
+    margin-left: 18%;
+    margin-top: 5%;
+}
+
+.form-select{
+    width: 110px;
+    margin-left: 19%;
+    padding-right: auto;
+}
+
+
+#bottom{
+    position : relative;
+    transform : translateY(400%);
+}
+
+div.left {
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    
+}
+div.right {
+    width: 50%;
+    float: right;
+    box-sizing: border-box;
+    
+}
+
+#gender{
+    margin-left: 65px;
+}
+
+#fullscreen{
+	width: 1500px;
+	height: 800px;
+
+}
+#screen1{
+
+	width: 850px;
+	height: 600px;
+    margin-right:10px;
+	float: left;
+}
+
+
+#screen2{
+	width: 600px;
+	height: 600px;
+	background-color: black;
+	float: left;
+}
+
+#address{
+    margin-left: 88px;
+    width:430px
+}
+
+
+#rowSize{
+
+    margin-left: 10px;
+
+}
