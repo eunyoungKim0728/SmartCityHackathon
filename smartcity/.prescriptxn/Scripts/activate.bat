@@ -12,6 +12,7 @@ if defined _OLD_CODEPAGE (
 set VIRTUAL_ENV=D:\VSC Workspace\senecaHackathon\smartcity\.prescriptxn
 
 
+
 if not defined PROMPT set PROMPT=$P$G
 
 if defined _OLD_VIRTUAL_PROMPT set PROMPT=%_OLD_VIRTUAL_PROMPT%

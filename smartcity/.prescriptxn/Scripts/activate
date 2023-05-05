@@ -39,7 +39,10 @@ deactivate () {
 deactivate nondestructive
 
 VIRTUAL_ENV="D:\VSC Workspace\senecaHackathon\smartcity\.prescriptxn"
+<<<<<<< HEAD
 
+=======
+>>>>>>> 181058ef71b236707debf78f331d6019feb99c5b
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
