@@ -16,18 +16,7 @@
     transform : translateY(400%);
 }
 
-div.left {
-    width: 50%;
-    float: left;
-    box-sizing: border-box;
-    
-}
-div.right {
-    width: 50%;
-    float: right;
-    box-sizing: border-box;
-    
-}
+
 
 #gender{
     margin-left: 65px;
@@ -35,7 +24,7 @@ div.right {
 
 #fullscreen{
 	width: 1500px;
-	height: 800px;
+	height: 1500px;
 
 }
 #screen1{
@@ -48,20 +37,28 @@ div.right {
 
 
 #screen2{
-	width: 600px;
+	width: 500px;
 	height: 600px;
 	background-color: black;
 	float: left;
 }
 
-#address{
-    margin-left: 88px;
-    width:430px
-}
 
 
 #rowSize{
 
     margin-left: 10px;
 
+}
+
+#costomCol{
+    margin-left: 65px;
+}
+
+.form-control {
+    width: 50%;
+}
+
+#passwordCol{
+    margin-left: 87px;
 }

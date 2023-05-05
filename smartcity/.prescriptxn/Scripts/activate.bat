@@ -8,11 +8,9 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-<<<<<<< HEAD
+
 set VIRTUAL_ENV=D:\VSC Workspace\senecaHackathon\smartcity\.prescriptxn
-=======
-set VIRTUAL_ENV=C:\Users\yujun\Repository\Portfolio\SenecaHackathon\smartcity\.prescriptxn
->>>>>>> 79c0a94a28a964e92098019c094fe370e7a3b0ba
+
 
 if not defined PROMPT set PROMPT=$P$G
 
