@@ -15,8 +15,9 @@ db_config = {
 
 # Connect to MySQL
 conn = pymysql.connect(**db_config)
+cursor = conn.cursor()
 
-
+#route
 @app.route('/')
 def home():
     return render_template("home.html")
@@ -56,6 +57,19 @@ def register():
 def medlist():
     name = request.args.get('name')
     return render_template("medlist.html", name=name)
+
+@app.route('/medadd', methods=['GET', 'POST'])
+def medadd(): 
+    if request.method == 'POST':
+
+
+    name = request.args.get('name')
+    return render_template("medadd.html", name=name)
+
+@app.route('/medinfo', methods=['GET', 'POST'])
+def medinfo(): 
+    name = request.args.get('name')
+    return render_template("medinfo.html", name=name)
 
 
 def main():

@@ -1,7 +1,7 @@
 
 .row div{padding: 20px 10px; border: 1px}
         .jumbotron {
-            background-image: url('static/img/bg.jpg');
+            background-image: url('../img/bg.jpg');
             height: 50vh;
             background-size: cover;
             background-position: center;
