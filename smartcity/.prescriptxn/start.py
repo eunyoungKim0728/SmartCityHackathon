@@ -9,7 +9,7 @@ app = Flask(__name__, static_folder='static', template_folder='templates')
 db_config = {
     'host': 'localhost',
     'user': 'root',
-    'password': 'root',
+    'password': 'root0000',
     'database': 'prescriptxn'
 }
 
