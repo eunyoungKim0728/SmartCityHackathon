@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    {% include 'head.html' %}
+    <script src="static/js/qrcode.min.js"></script>
+    <body>
+      <div id="qrcode"></div>
+        <script type="text/javascript">
+            
+            var data = "Name: " + "{{ firstName }}" + " " + "{{ lastName }}" + "\nBirthday: " + "{{birthday}}" + "\nEmail: " + "{{email}}";
+        
+            var qrcode = new QRCode(document.getElementById("qrcode"), {
+                width: 200,
+                height: 200,
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+            qrcode.makeCode(data);
+        </script>
+  
+    </body>
+</html>

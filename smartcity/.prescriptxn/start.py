@@ -9,7 +9,7 @@ app = Flask(__name__, static_folder='static', template_folder='templates')
 db_config = {
     'host': 'localhost',
     'user': 'root',
-    'password': 'root0000',
+    'password': 'root',
     'database': 'prescriptxn'
 }
 
@@ -48,10 +48,36 @@ def register():
         # Close database connection
         cursor.close()
         db.close()
-
-        return redirect(url_for('medlist', name=first_name))
+        return redirect(url_for('medlist', name=first_name)) + url_for('qrcode', firstName=first_name, lastName=last_name, email=email, birthday=birthday)
     else:
         return render_template("register.html")
+
+
+@app.route('/qrcode')
+def qrcode():
+ 
+    db = pymysql.connect(**db_config)
+    mycursor = db.cursor()
+
+    mycursor.execute("SELECT * FROM users")
+    
+    results = mycursor.fetchall()
+    userID = results[0][0]
+    firstName = results[0][1]
+    lastName = results[0][2]
+    birthday = results[0][4]
+    email = results[0][9]
+    
+    # Close database connection
+    mycursor.close()
+    db.close()
+
+    if results:
+        return render_template("qrcode.html", userID=userID, firstName=firstName, lastName=lastName,birthday=birthday , email=email)
+    else:
+        return render_template("home.html")
+
+
 
 @app.route('/medlist')
 def medlist():

@@ -4,13 +4,13 @@ import pymysql
 db = pymysql.connect(host='localhost',
                      port=3306,
                      user='root',
-                     passwd='root0000',
+                     passwd='root',
                      db='prescriptxn',
                      charset='utf8')
  
 
 cursor = db.cursor()
- 
+
 
 sql = """CREATE TABLE users(
         userID SMALLINT NOT NULL AUTO_INCREMENT,
@@ -25,7 +25,7 @@ sql = """CREATE TABLE users(
         email VARCHAR(100) NOT NULL,
         PRIMARY KEY(userID)
          );"""
- 
+
 
 cursor.execute(sql)
  
@@ -33,7 +33,15 @@ cursor.execute(sql)
 cursor.execute("show tables") 
  
 
-db.commit()
- 
 
+
+
+mycursor = db.cursor() 
+mycursor.execute("SELECT * FROM users")
+results = mycursor.fetchall()
+
+
+db.commit()
+mycursor.close()
+cursor.close()
 db.close()
