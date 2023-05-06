@@ -38,8 +38,8 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="D:\VSC Workspace\senecaHackathon\smartcity\.prescriptxn"
-
+VIRTUAL_ENV="C:\Users\yujun\Repository\Portfolio\SenecaHackathon\SmartCityHackathon\smartcity\.prescriptxn"
+export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
 PATH="$VIRTUAL_ENV/Scripts:$PATH"

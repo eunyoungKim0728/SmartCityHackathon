@@ -1,6 +1,7 @@
 from flask import Flask, render_template, Blueprint, request, flash, redirect, url_for
 import pymysql
 import requests
+import json
 from module import dbModule
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
@@ -8,8 +9,8 @@ app = Flask(__name__, static_folder='static', template_folder='templates')
 
 db_config = {
     'host': 'localhost',
-    'user': 'root',
-    'password': 'root',
+    'user': 'SETUser',
+    'password': 'Conestoga1',
     'database': 'prescriptxn'
 }
 
@@ -87,13 +88,55 @@ def medlist():
 @app.route('/medadd', methods=['GET', 'POST'])
 def medadd(): 
     if request.method == 'POST':
-        name = request.args.get('name')
+        medlist = json.loads(request.form.get('medicationList'))
+        db = pymysql.connect(**db_config)
+        cursor = db.cursor()
+        for medication in medlist:
+            sql = "insert into medications (medication_name) values (%s)"
+            values = medication
+            cursor.execute(sql, values)
+            db.commit()    
+        cursor.close()
+        db.close()
+
+    else:
+        return render_template("medadd.html")
+
+    name = request.args.get('name')
     return render_template("medadd.html", name=name)
 
+
+
 @app.route('/medinfo', methods=['GET', 'POST'])
-def medinfo(): 
+def medinfo():
+
+    # connect
+    db = pymysql.connect(**db_config)
+    cursor = db.cursor()
+    # get data
+    cursor.execute("SELECT * FROM medications")
+    medications = cursor.fetchall()
+
+    print(medications)
+
+    #close
+    cursor.close()
+    db.close()
+
     name = request.args.get('name')
     return render_template("medinfo.html", name=name)
+
+
+@app.route('/portal')
+def portal():
+    name = request.args.get('name')
+    return render_template("portal.html", name=name)
+
+
+@app.route('/about')
+def about():
+    name = request.args.get('name')
+    return render_template("about.html", name=name)
 
 
 def main():

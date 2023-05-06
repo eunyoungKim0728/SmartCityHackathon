@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+  {% include 'head.html' %}
+
+    <body>
+      {% include 'nav.html' %}
+        <div class="jumbotron jumbotron-fluid text-white text-center">
+            <div class="container text-center position-absolute top-50 start-50 translate-middle">
+             <h2 class="fs-1 bold">PRESCRIPTXN</h2>
+             <p class="fs-4">Master Your Medications And Health</p>
+            </div>
+        </div>
+
+        <!-- About -->
+        <div class="container">
+            <h2 class="display-4 text-center py-5 my-4" id="about">About</h2>
+            <nav class="nav justify-content-center nav-pills flex-column flex-md-row">
+                <a class="nav-link" href="#our_story" data-bs-toggle="tab">Our Story</a>
+                <a class="nav-link" href="#ourteam" data-bs-toggle="tab">Ourteam</a>
+                <a class="nav-link" href="#learn" data-bs-toggle="tab">Learn</a>
+                <a class="nav-link" href="#sustainability"data-bs-toggle="tab">Sustainability</a>
+            </nav>
+            <div class="tab-content py-5">
+                <div class="tab-pane active" id="our_story">
+                    <h3>Our story</h3>
+                    <p> We live in a world where health and well-being are paramount, but navigating the complexities of healthcare can be daunting, especially managing prescriptions.  
+
+                        Today, we would like to introduce you to an innovative solution that aims to simplify medication management for all stakeholders, ultimately improving patient outcomes and healthcare efficiency. </p>
+                </div>
+                <div class="tab-pane" id="ourteam">
+                    <h3>Ourteam</h3>
+                    <table class="table table-image">
+                        <tbody>                      
+                          <tr>
+                            <th scope="row">
+                                <img src="" class="img-fluid img-thumbnail" alt="bryan" width="100" height="100">
+                            </th>
+                            <td class="w-20">
+                                Bryan
+                            </td>
+                            <td>Bryan</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Eunyoung</th>
+                            <td class="w-20">
+                                <img src="" class="img-fluid img-thumbnail" alt="eunyoung" width="100" height="100">
+                            </td>
+                            <td>Eunyoung</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Hyewon</th>
+                            <td class="w-20">
+                                <img src="" class="img-fluid img-thumbnail" alt="hyewon" width="100" height="100">
+                            </td>
+                            <td>Hyewon</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Yujung</th>
+                            <td class="w-20">
+                                <img src="" class="img-fluid img-thumbnail" alt="yj" width="100" height="100">
+                            </td>
+                            <td>Yujung</td>
+                          </tr> 
+                        </tbody>
+                      </table>  
+
+                </div>
+                <div class="tab-pane" id="learn">
+                    <h3>Learn</h3>
+                    <p> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="tab-pane" id="sustainability">
+                    <h3>Sustainability</h3>
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/watch?v=7ooA8JGu3GY&t=1s" title="YouTube video" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+  </body>
+
+  {% include 'footer.html' %}
+
+    
+      
+      
+      <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+-->
+<script>
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
+
+</html>
