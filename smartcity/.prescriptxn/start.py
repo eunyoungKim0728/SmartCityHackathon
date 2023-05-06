@@ -132,6 +132,10 @@ def portal():
     name = request.args.get('name')
     return render_template("portal.html", name=name)
 
+@app.route('/appointment')
+def appointment():
+    name = request.args.get('name')
+    return render_template("appointment.html", name=name)
 
 @app.route('/about')
 def about():
