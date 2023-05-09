@@ -3,9 +3,25 @@
     {% include 'head.html' %}
     <script src="static/js/qrcode.min.js"></script>
     <body>
-      <div id="qrcode"></div>
-        <script type="text/javascript">
-            
+        {% include 'nav.html' %}
+
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md col-lg-4 mx-auto">
+                    <div class="card text-center" style="width: 250px; border: 2px solid black;">
+                        <div id="qrcode" class="text-center"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Please Scan QR</h5>
+                            <p class="card-text">QR is scanned with PRESCRIPTXN registered Scanner only</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <script src="static/js/qrcode.min.js"></script>
+        <script>
             var data = "Name: " + "{{ firstName }}" + " " + "{{ lastName }}" + "\nBirthday: " + "{{birthday}}" + "\nEmail: " + "{{email}}";
         
             var qrcode = new QRCode(document.getElementById("qrcode"), {
@@ -17,6 +33,6 @@
             });
             qrcode.makeCode(data);
         </script>
-  
     </body>
+    {% include 'footer.html' %}
 </html>

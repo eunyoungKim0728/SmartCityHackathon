@@ -14,67 +14,104 @@
     .row div{padding: 20px 10px; border: 1px}
     .jumbotron{
     background-image: url('static/img/portalbanner.jpeg');
-    height: 50vh;
+    height: 400px;
     background-size: cover;
     background-position: center;
     color: #ffffff;
     border-radius: 0px;
-}
+    }
+    .portalcard-image {
+      width: 400px;
+      height: 230px;
+  }
   </style>
 
 
   <title>PRESCRIPTXN</title>
 </head>
 
-    <body>
-      {% include 'nav.html' %}
-        <div class="jumbotron jumbotron-fluid text-white text-center style=background:pink;">
-            <div class="container align-items-center mx-md-n5">
-              <h2 class="fs-1 bold text-dark">PRESCRIPTXN PORTAL</h2>
-              <p class="fs-4  text-dark">Master Your Medications And Health</p>
+<body>
+  {% include 'nav.html' %}
+    <div class="jumbotron jumbotron-fluid text-white text-center p-5">
+        <div class="container">
+            <div class="row text-center p-5">
+            </div>
+            <div class="row text-center text-dark">
+            <h2 class="fs-1 bold">PRESCRIPTXN</h2>
+            <p class="fs-4">Master Your Medications And Health</p>
+            </div>
+            <div class="row text-center">
+            </div>
+          </div>
+    </div>
+
+  <!-- cards-->
+  <div class="container">
+  <h2 class="display-4 text-center py-4 my-3" id="menu">Quick Access</h2>
+    <div class="row" >
+        <div class="col-md col-lg-4">
+            <div class="card">
+              <a href="/medadd">
+                <img src="static/img/medhistory.png" class="img-thumbnail portalcard-image" alt="add medication">
+              </a>
+                <div class="card-block" >
+                    <h3 class="card-title text-center">Search patient</h3>
+                </div>
             </div>
         </div>
 
-        <!-- cards-->
-        <div class="container">
-          <h2 class = "p-4 text-center"> Quick Menu </h2>
-          <div class="row" >
-              <div class="col-md col-lg-4">
-                
-                  <div class="card">
-                    <a href="/medinfo">
-                      <img src="static/img/medhistory.png" class="img-thumbnail" alt="medication history">
-                    </a>
-                      <div class="card-block" >
-                          <h3 class="card-title text-center">Medication-History</h3>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md col-lg-4">
-                <a href="/qrcode">
-                  <div class="card">
-                      <img src="static/img/schedule.jpg" class="img-thumbnail" alt="quick qr" >
-                      <div class="card-block">
-                          <h3 class="card-title">Generate QR Code</h3>
-                          <p></p>
-                      </div>
-                  </div>
-                </a>
-              </div>
-              <div class="col-md col-lg-4">
-                  <div class="card">
-                      <img src="" class="img-thumbnail" alt="pdf">
-                      <div class="card-block">
-                          <h3 class="card-title">Medication PDF</h3>
-                          <p></p>
-                      </div>
-                  </div>
-              </div>
-          </div>
+        <div class="col-md col-lg-4">
+            <div class="card">
+              <a href="/qrcode">
+                <img src="static/img/scan.png"  class="img-thumbnail portalcard-image" alt="quick qr" >
+              </a>
+                <div class="card-block">
+                    <h3 class="card-title text-center">QR Code</h3>
+                    <p></p>
+                </div>
+            </div>
         </div>
-  </body>
 
-  {% include 'footer.html' %}
+        <div class="col-md col-lg-4">
+            <div class="card">
+              <a href="/appointment">
+                <img src="static/img/schedule.jpg" class="img-thumbnail portalcard-image" alt="appointment" >
+              </a>
+                <div class="card-block">
+                    <h3 class="card-title text-center">Make Appointment</h3>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+          <!-- partners-->
+          <div class="container">
+            <h2 class="display-5 text-center py-4 my-3" id="menu">Our partners</h2>
+              <div class="row" >
+                  <div class="col-md col-lg-4">
+                    <a href="/portal">
+                      <img src="static/img/portal.jpeg" class="img-thumbnail partner-img" alt="doctorportal">
+                    </a>
+                  </div>
+                  <div class="col-md col-lg-4">
+                    <a href="https://www.senecacollege.ca/home.html">
+                      <img src="static/img/seneca.jpg" class="img-thumbnail partner-img" alt="add medication">
+                    </a>
+                  </div>
+                  <div class="col-md col-lg-4">
+                    <a href="https://www.conestogac.on.ca/">
+                      <img src="static/img/cone.jpg" class="img-thumbnail partner-img" alt="add medication">
+                    </a>
+                  </div>
+                </div>
+            </div>
+
+</body>
+
+{% include 'footer.html' %}
 
     
       
