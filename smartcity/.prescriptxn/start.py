@@ -109,7 +109,6 @@ def medadd():
 
 @app.route('/medinfo', methods=['GET', 'POST'])
 def medinfo():
-
     # connect
     db = pymysql.connect(**db_config)
     cursor = db.cursor()
