@@ -2,10 +2,13 @@ from flask import Flask, render_template, Blueprint, request, flash, redirect, u
 import pymysql
 import requests
 import json
+import openai
 from module import dbModule
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 
+API_KEY = open("API_KEY", "r").read()
+openai.api_key = API_KEY
 
 db_config = {
     'host': 'localhost',
@@ -85,20 +88,40 @@ def medlist():
     name = request.args.get('name')
     return render_template("medlist.html", name=name)
 
+
 @app.route('/medadd', methods=['GET', 'POST'])
 def medadd(): 
     if request.method == 'POST':
         medlist = json.loads(request.form.get('medicationList'))
         db = pymysql.connect(**db_config)
         cursor = db.cursor()
+
         for medication in medlist:
+            api_url = f'https://api.fda.gov/drug/label.json?search=openfda.generic_name:"{medication}"&limit=1'
+            response = requests.get(api_url)
+
+            if response.status_code == 200:
+                # Extract relevant information from the API response
+                result = response.json()
+                drug_name = result['results'][0]['openfda']['generic_name'][0]
+
+                ai_response = openai.ChatCompletion.create(
+                    model="gpt-3.5-turbo",
+                    messages=[
+                        {"role": "user", "content": f"provide effectiveness of {drug_name} in 2 sentences with easy words"},
+                    ]
+                )
+                print(ai_response)
+                print(f"Medication: {drug_name}")
+            else:
+                print("no response from fda api")
+
             sql = "insert into medications (medication_name) values (%s)"
             values = medication
             cursor.execute(sql, values)
             db.commit()    
         cursor.close()
         db.close()
-
     else:
         return render_template("medadd.html")
 
