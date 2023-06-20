@@ -6,19 +6,24 @@ PRESCRIPTXN is a system that was developed during 2023 Smart Cities Hackathon - 
 
 ## Contents
 
-- [Solution](#-solution)
-- [Main](#-main)
-- [Medication List](#-medication-list)
-
+- [Solution](#-Solution)
+- [Minimum viable Product](#-MVP)
 
 ## Solution
 
 <img src="/ppt.jpg" width="1000">
 
-## Main
+## MVP
 
 <img src="/main.jpg">
 
-## List
+<img src="/add.jpg">
 
 <img src="/list.jpg">
+
+<img src="/barcode.jpg">
+
+<img src="/app.jpg">
+
+<img src="/about.jpg">
+
